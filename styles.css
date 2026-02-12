@@ -1,33 +1,46 @@
-cat > styles.css <<'EOF'
-.container { max-width: 500px; margin: 40px auto; font-family: system-ui; padding: 20px; }
-.input-row { display: flex; gap: 8px; margin-bottom: 20px; }
-.input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
-.btn-add { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-.todo-item { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid #eee; gap: 10px; }
-.todo-title { flex: 1; }
-.todo-done { text-decoration: line-through; color: #888; }
-.btn-delete { background: #e53e3e; color: white; border: none; border-radius: 4px; padding: 5px 10px; cursor: pointer; }
-.count { text-align: center; color: #888; margin-top: 16px; font-size: 0.9rem; }
-.category {
-    padding: 2px 8px;
-    background: #e0e0e0;
-    border-radius: 12px;
-    font-size: 12px;
-    margin-right: 10px;
-  }
-  
-  .todo-main { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.container { max-width: 900px; margin: 30px auto; font-family: system-ui; padding: 16px; }
+.header-row { display: flex; justify-content: space-between; align-items: center; }
+.input-row { display: flex; gap: 10px; margin: 16px 0; }
+.input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
 
-  .btn-memory {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .memory-text {
-    font-size: 12px;
-    color: #888;
-  }
+.btn { padding: 10px 14px; border: 0; border-radius: 8px; cursor: pointer; }
+.btn-add { background: #4CAF50; color: #fff; }
+.btn-delete { background: #e5533e; color: #fff; }
+.link-btn { background: transparent; color: #2563eb; cursor: pointer; border: 0; }
+
+.loading { color: #666; margin: 10px 0; }
+.count { text-align: center; color: #777; margin-top: 16px; }
+
+.todo-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; }
+.todo-main { flex: 1; }
+.todo-title { font-size: 16px; }
+.todo-done { text-decoration: line-through; color: #888; }
+
+.meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; align-items: center; }
+.allergen { background: #f2f2f2; padding: 2px 8px; border-radius: 999px; font-size: 12px; }
+.trace { color: #b45309; font-size: 12px; }
+
+.verdict { padding: 2px 8px; border-radius: 999px; font-size: 12px; color: #fff; }
+.verdict.safe { background: #16a34a; }
+.verdict.caution { background: #f59e0b; }
+.verdict.avoid { background: #dc2626; }
+.verdict.unknown { background: #6b7280; }
+
+.auth-container { max-width: 420px; margin: 60px auto; }
+.auth-card { border: 1px solid #eee; border-radius: 12px; padding: 20px; }
+.auth-title { margin: 0 0 12px 0; }
+.auth-error { background: #fee2e2; color: #991b1b; padding: 8px 10px; border-radius: 8px; margin-bottom: 10px; }
+.subtitle { color: #666; margin-top: -8px; margin-bottom: 16px; font-size: 0.95rem; }
+
+.todo-main { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+.badge { padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid #ddd; }
+.badge.safe { background: #e8fff0; border-color: #b7f0c8; }
+.badge.caution { background: #fff7e6; border-color: #ffe0a3; }
+.badge.avoid { background: #ffecec; border-color: #ffb6b6; }
+.badge.unknown { background: #f3f3f3; border-color: #ddd; }
+
+.allergen { padding: 2px 8px; border-radius: 999px; font-size: 12px; background: #f2f2ff; border: 1px solid #d7d7ff; }
+.trace { padding: 2px 8px; border-radius: 999px; font-size: 12px; background: #fff0f0; border: 1px solid #ffcccc; }

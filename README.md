@@ -1,65 +1,39 @@
-# AI Todo App (Jac + Ollama)
+# VeroEat Safety Todo (Jac + Ollama)
 
-Name: <Ruoxi_Liu>  
-UMID: <48023036>
+Name: <Ruoxi Liu>
+UMID: <78023036>
 
 ## Overview
+A Todo app built with Jac. When you add a food/ingredient, the app uses a local Ollama model to normalize:
+- allergens (list)
+- trace risk (“may contain”)
+- safety verdict (safe/caution/avoid/unknown)
 
-This project is an AI-powered Todo App built with Jac.
+## Custom Feature
+**Food Safety Verdict Normalization**
+- On every new todo, AI extracts a standardized allergen list and detects “may contain / trace risk”.
+- The UI renders allergen tags and a trace-risk badge.
 
-It supports:
+### Where the code is
+- AI analysis + normalization logic: `main.jac` (`analyze_food` prompt + todo creation)
+- UI rendering (allergen chips / trace risk badge): `main.jac` client UI section (the todo item rendering)
 
-- Creating, toggling, and deleting todos
-- Automatic AI categorization using Ollama
-- A custom AI memory feature (🧠) that summarizes each todo into a helpful reminder
-
-## Custom Feature: AI Memory Button 🧠
-
-Each todo includes a brain button.
-
-When clicked:
-
-- The server calls `remember_todo`
-- Ollama generates a short memory summary
-- The summary is stored in the Todo node
-- The frontend displays it under the task
-
-### Example:
-
-Buy grocery  
-→ 🧠 “Remember to purchase food items from the store.”
-
-## How It Works
-
-### Backend
-
-- Added `memory` field to `Todo` node
-- Added `summarize()` LLM function
-- Added `remember_todo()` endpoint
-
-### Frontend
-
-- Added 🧠 button per todo
-- Calls `remember()`
-- Displays memory text dynamically
-
-Relevant code:
-
-- `main.jac`: Todo node, remember_todo function, summarize()
-- Client `remember()` method
-- UI 🧠 button + memory-text div
-- styles.css for memory display
+## Requirements
+- Python environment with Jac installed
+- Ollama installed and running locally
+- Model pulled: `ollama/llama3.2:1b` (or your configured model)
 
 ## Run Instructions
-
-Requirements:
-
-- Jac
-- Ollama
-- llama3 model
-
-Steps:
-
 ```bash
+# 1) start ollama (in a separate terminal)
 ollama serve
+
+# 2) (optional) pull the model
+ollama pull llama3.2:1b
+
+# 3) start the Jac dev server
+jac clean --all
 jac start main.jac
+
+# 4) open the app
+# http://localhost:8000
