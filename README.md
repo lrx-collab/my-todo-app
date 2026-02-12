@@ -1,6 +1,6 @@
 # AI Todo App (Jac + Ollama)
 
-Name: <Ruoxi Liu>  
+Name: <Ruoxi_Liu>  
 UMID: <48023036>
 
 ## Overview
