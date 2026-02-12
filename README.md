@@ -1,6 +1,6 @@
 # VeroEat Safety Todo (Jac + Ollama)
 
-Name: <Ruoxi Liu>
+Name: <Ruoxi_Liu>
 UMID: <78023036>
 
 ## Overview
